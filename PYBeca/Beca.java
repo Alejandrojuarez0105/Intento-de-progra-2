@@ -4,17 +4,17 @@ public class Beca {
     private Profesor[] esperando;
     private int ultimoProfesor;
     private int ultimoBecario;
-    private String[] nombresBecarios;
+    private int becariosEliminados;
 
     public Beca() {
-        nombresBecarios = new String[]{"David", "Eva", "Josue", "Alejandro"};
+        String[] nombresBecarios = new String[] { "David", "Eva", "Josue", "Alejandro" };
         becarios = new Becario[4];
         for (int i = 0; i < becarios.length; i++) {
             becarios[i] = new Becario(nombresBecarios[i]);
+            ultimoBecario++;
         }
         esperando = new Profesor[20];
         ultimoProfesor = 0;
-        ultimoBecario = 4;
     }
 
     public void recibe(Profesor profesor) {
@@ -29,15 +29,35 @@ public class Beca {
     }
 
     public void actualizar() {
+        if (ultimoProfesor >= 15 && becariosEliminados < 3) {
+            eliminarBecario(3);
+            becariosEliminados++;
+        } else if (ultimoProfesor >= 10 && becariosEliminados < 2) {
+            eliminarBecario(2);
+            becariosEliminados++;
+        } else if (ultimoProfesor >= 5 && becariosEliminados < 1) {
+            eliminarBecario(1);
+            becariosEliminados++;
+        }
+
         if (ultimoProfesor > 0) {
             deColaABecario();
         }
         becariosAyudan();
     }
 
-    
+    private void eliminarBecario(int i) {
+        if (ultimoBecario > 1) {
+            Becario becarioMuerto = becarios[ultimoBecario - 1];
+            System.out.print("");
+            System.out.println("El becario " + becarioMuerto.getNombre() + " murio por exceso de trabajo");
+            System.out.print("");
+            ultimoBecario--;
+        }
+    }
+
     private void deColaABecario() {
-        for (int i = 0; i < becarios.length; i++) {
+        for (int i = 0; i < ultimoBecario; i++) {
             if (ultimoProfesor > 0 && becarios[i].estaLibre()) {
                 Profesor profesor = esperando[ultimoProfesor - 1];
                 ultimoProfesor--;
@@ -45,14 +65,13 @@ public class Beca {
             }
         }
     }
-    
+
     private void becariosAyudan() {
         for (int i = 0; i < becarios.length; i++) {
             becarios[i].ayudan();
         }
     }
 
-    
     public void verEstado(int minutoActual) {
         System.out.println("Minuto actual: " + minutoActual);
         System.out.println(ultimoProfesor + " profesores esperando");
