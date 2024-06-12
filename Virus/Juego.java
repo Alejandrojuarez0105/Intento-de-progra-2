@@ -15,25 +15,25 @@ public class Juego {
     private void inicializarJugadores() {
         System.out.println("Ingrese el número de jugadores (mínimo 2):");
         int numJugadores = scanner.nextInt();
-        scanner.nextLine(); // Consumir el salto de línea
+        scanner.nextLine();
 
         while (numJugadores < 2) {
             System.out.println("Debe haber al menos dos jugadores. Ingrese el número de jugadores nuevamente:");
             numJugadores = scanner.nextInt();
-            scanner.nextLine(); // Consumir el salto de línea nuevamente
+            scanner.nextLine();
         }
 
-        jugadores = new Jugador[numJugadores]; // Inicializa el array de jugadores con el tamaño correcto
+        jugadores = new Jugador[numJugadores];
 
         for (int i = 0; i < numJugadores; i++) {
             System.out.println("Ingrese el nombre del jugador " + (i + 1) + ":");
             String nombre = scanner.nextLine();
-            while (nombre.trim().isEmpty()) { // Verificar si el nombre ingresado es vacío
+            while (nombre.trim().isEmpty()) {
                 System.out.println("El nombre del jugador no puede ser vacío. Ingrese el nombre nuevamente:");
                 nombre = scanner.nextLine();
             }
             Jugador jugador = new Jugador(nombre);
-            jugadores[i] = jugador; // Asigna el jugador al array
+            jugadores[i] = jugador;
 
             for (int j = 0; j < 3; j++) {
                 jugador.agregarCarta(mazo.robarCarta());
