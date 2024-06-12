@@ -1,0 +1,69 @@
+@startuml
+
+class Jugador {
+    - nombre: String
+    - mano: ArrayList<Carta>
+    + Jugador(nombre: String)
+    + getNombre(): String
+    + getMano(): ArrayList<Carta>
+    + agregarCarta(carta: Carta): void
+    + jugarCarta(carta: Carta, juego: Juego): void
+    + mostrarMano(): void
+    + haGanado(): boolean
+}
+
+class Mazo {
+    - cartas: Stack<Carta>
+    + Mazo()
+    - inicializarMazo(): void
+    + robarCarta(): Carta
+}
+
+class Juego {
+    - jugadores: ArrayList<Jugador>
+    - mazo: Mazo
+    - scanner: Scanner
+    + Juego()
+    - inicializarJugadores(): void
+    + jugar(): void
+    + seleccionarJugador(): Jugador
+}
+
+abstract class Carta {
+    - nombre: String
+    + Carta(nombre: String)
+    + getNombre(): String
+    {abstract} + usar(jugador: Jugador, juego: Juego): void
+}
+
+class CartaVirus {
+    + CartaVirus(nombre: String, color: String)
+    + usar(jugador: Jugador, juego: Juego): void
+}
+
+class CartaMedicina {
+    + CartaMedicina(nombre: String, color: String)
+    + usar(jugador: Jugador, juego: Juego): void
+}
+
+class CartaOrganos {
+    + CartaOrganos(nombre: String, color: String)
+    + usar(jugador: Jugador, juego: Juego): void
+}
+
+class CartaTratamiento {
+    + CartaTratamiento(nombre: String)
+    + usar(jugador: Jugador, juego: Juego): void
+}
+
+Jugador "1" --> "*" Carta : tiene
+
+Juego *-- Jugador : contiene
+Juego *-- Mazo : contiene
+
+Carta <|-- CartaVirus
+Carta <|-- CartaMedicina
+Carta <|-- CartaOrganos
+Carta <|-- CartaTratamiento
+
+@enduml
