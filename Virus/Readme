@@ -1,0 +1,33 @@
+# Virus de Tranjis
+
+## Descripción
+
+Virus de Tranjis es un juego de cartas basado en la popular actividad de "Tranjis" donde los jugadores compiten por curar sus órganos infectados y ser el primero en alcanzar la victoria.
+
+## Reglas del Juego
+
+1. **Objetivo**: El objetivo del juego es ser el primer jugador en curar todos sus órganos infectados o alcanzar un puntaje objetivo determinado.
+
+2. **Inicio del Juego**: Los jugadores eligen un nombre y reciben cartas iniciales del mazo.
+
+3. **Turno de Juego**:
+    - Cada jugador, en su turno, elige una carta de su mano para jugar.
+    - Las cartas pueden ser de diferentes tipos: virus, medicina, órganos o tratamientos especiales.
+    - Dependiendo del tipo de carta jugada, se realizan diferentes acciones, como infectar un órgano, curar un órgano infectado o aplicar un tratamiento especial.
+    - El juego continúa hasta que un jugador alcanza el objetivo de curar todos sus órganos o alcanza el puntaje objetivo.
+
+4. **Fin del Juego**:
+    - El juego termina cuando un jugador alcanza el objetivo de curar todos sus órganos o alcanza el puntaje objetivo.
+    - El jugador que logra esto primero es declarado como el ganador.
+
+## Ejecutar el Juego
+
+Para ejecutar el juego, sigue estos pasos:
+
+1. **Compilación del Código**: Asegúrate de tener el código fuente del juego. Compila todas las clases Java utilizando tu compilador Java preferido o tu IDE.
+
+2. **Ejecución del Juego**: Una vez que todas las clases están compiladas, ejecuta la clase `Juego` que contiene el método `main`. Puedes hacerlo desde la línea de comandos con el comando `java Juego`, o utilizando tu IDE seleccionando la opción de ejecución.
+
+3. **Jugar**: Sigue las instrucciones en la consola para jugar. Ingresa el número de jugadores, sus nombres y sigue las instrucciones para seleccionar cartas y jugar.
+
+¡Diviértete jugando al Virus de Tranjis!
