@@ -1,50 +1,60 @@
-import java.util.ArrayList;
-
 public class Jugador {
     private String nombre;
-    private ArrayList<Carta> mano;
-    private ArrayList<cartaOrganos> organos;
-    private ArrayList<cartaOrganos> organosInfectados;
+    private Carta[] mano;
+    private cartaOrganos[] organos;
+    private cartaOrganos[] organosInfectados;
+    private int manoSize;
+    private int organosSize;
+    private int organosInfectadosSize;
 
     public Jugador(String nombre) {
         this.nombre = nombre;
-        this.mano = new ArrayList<>();
-        this.organos = new ArrayList<>();
-        this.organosInfectados = new ArrayList<>();
+        this.mano = new Carta[10];
+        this.organos = new cartaOrganos[10];
+        this.organosInfectados = new cartaOrganos[10];
+        this.manoSize = 0;
+        this.organosSize = 0;
+        this.organosInfectadosSize = 0;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public ArrayList<Carta> getMano() {
+    public Carta[] getMano() {
         return mano;
     }
 
     public void agregarCarta(Carta carta) {
-        mano.add(carta);
+        if (manoSize < mano.length) {
+            mano[manoSize] = carta;
+            manoSize++;
+        } else {
+            System.out.println("No se puede agregar más cartas a la mano.");
+        }
     }
 
     public void jugarCarta(Carta carta, Juego juego) {
         carta.usar(this, juego);
-        mano.remove(carta);
+        eliminarCarta(carta);
     }
 
     public void mostrarMano() {
-        for (int i = 0; i < mano.size(); i++) {
-            System.out.println((i + 1) + ". " + mano.get(i).getNombre());
+        for (int i = 0; i < manoSize; i++) {
+            System.out.println((i + 1) + ". " + mano[i].getNombre());
         }
     }
 
     public boolean haGanado() {
-        return organos.size() >= 4;
+        return organosSize >= 4;
     }
 
     public boolean infectarOrgano(String color) {
-        for (cartaOrganos organo : organos) {
-            if (organo.getColor().equals(color)) {
-                organos.remove(organo);
-                organosInfectados.add(organo);
+        for (int i = 0; i < organosSize; i++) {
+            if (organos[i].getColor().equals(color)) {
+                cartaOrganos organo = organos[i];
+                eliminarOrgano(organo);
+                agregarOrganoInfectado(organo);
                 return true;
             }
         }
@@ -52,25 +62,76 @@ public class Jugador {
     }
 
     public boolean curarOrgano(String color) {
-        for (cartaOrganos organo : organosInfectados) {
-            if (organo.getColor().equals(color)) {
-                organosInfectados.remove(organo);
-                organos.add(organo);
+        for (int i = 0; i < organosInfectadosSize; i++) {
+            if (organosInfectados[i].getColor().equals(color)) {
+                cartaOrganos organo = organosInfectados[i];
+                eliminarOrganoInfectado(organo);
+                agregarOrgano(organo);
                 return true;
             }
         }
         return false;
     }
 
-    public void agregarOrgano(cartaOrganos organo) {
-        organos.add(organo);
+    private void eliminarCarta(Carta carta) {
+        for (int i = 0; i < manoSize; i++) {
+            if (mano[i] == carta) {
+                for (int j = i; j < manoSize - 1; j++) {
+                    mano[j] = mano[j + 1];
+                }
+                manoSize--;
+                return;
+            }
+        }
     }
 
-    public ArrayList<cartaOrganos> getOrganos() {
+    private void eliminarOrgano(cartaOrganos organo) {
+        for (int i = 0; i < organosSize; i++) {
+            if (organos[i] == organo) {
+                for (int j = i; j < organosSize - 1; j++) {
+                    organos[j] = organos[j + 1];
+                }
+                organosSize--;
+                return;
+            }
+        }
+    }
+
+    private void eliminarOrganoInfectado(cartaOrganos organo) {
+        for (int i = 0; i < organosInfectadosSize; i++) {
+            if (organosInfectados[i] == organo) {
+                for (int j = i; j < organosInfectadosSize - 1; j++) {
+                    organosInfectados[j] = organosInfectados[j + 1];
+                }
+                organosInfectadosSize--;
+                return;
+            }
+        }
+    }
+
+    private void agregarOrganoInfectado(cartaOrganos organo) {
+        if (organosInfectadosSize < organosInfectados.length) {
+            organosInfectados[organosInfectadosSize] = organo;
+            organosInfectadosSize++;
+        } else {
+            System.out.println("No se puede agregar más órganos infectados.");
+        }
+    }
+
+    public void agregarOrgano(cartaOrganos organo) {
+        if (organosSize < organos.length) {
+            organos[organosSize] = organo;
+            organosSize++;
+        } else {
+            System.out.println("No se puede agregar más órganos.");
+        }
+    }
+
+    public cartaOrganos[] getOrganos() {
         return organos;
     }
 
-    public ArrayList<cartaOrganos> getOrganosInfectados() {
+    public cartaOrganos[] getOrganosInfectados() {
         return organosInfectados;
     }
 }

@@ -11,7 +11,7 @@ public class cartaTratamiento extends Carta {
         if (objetivo != null) {
             boolean efectoAplicado = false;
             for (cartaOrganos organo : objetivo.getOrganos()) {
-                if (!objetivo.getOrganosInfectados().contains(organo)) {
+                if (!contains(organo, objetivo.getOrganosInfectados())) {
                     objetivo.infectarOrgano(organo.getColor());
                     efectoAplicado = true;
                     System.out.println("Órgano sano de color " + organo.getColor() + " ha sido infectado.");
@@ -26,5 +26,14 @@ public class cartaTratamiento extends Carta {
                 }
             }
         }
+    }
+
+    private boolean contains(cartaOrganos organo, cartaOrganos[] array) {
+        for (cartaOrganos o : array) {
+            if (o == organo) {
+                return true;
+            }
+        }
+        return false;
     }
 }
