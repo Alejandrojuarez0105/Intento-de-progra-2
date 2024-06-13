@@ -1,4 +1,3 @@
-
 public class Estadisticas {
 
     private int soldadosRescatados;

@@ -26,22 +26,25 @@ public class Casilla {
         return haySoldado;
     }
 
-    public boolean estaRevelada() {
-        return revelada;
-    }
-
     public void revelar() {
         this.revelada = true;
     }
 
+    String iconoInicio = " ";
+
     public String obtenerSimbolo() {
-        if (!revelada) {
-            return ".";
-        } else if (tieneSoldado()) {
-            return "~";
-        } else {
-            return "S";
+        if (!tieneSoldado()) {
+            iconoInicio = "S";
         }
+
+        if (tieneSoldado()) {
+            iconoInicio = "~";
+        }
+        if (!revelada) {
+            iconoInicio = ".";
+        }
+
+        return iconoInicio;
     }
 
 }
