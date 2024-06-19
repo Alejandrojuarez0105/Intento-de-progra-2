@@ -1,0 +1,1 @@
+# Intento del examen parcial con herencia
