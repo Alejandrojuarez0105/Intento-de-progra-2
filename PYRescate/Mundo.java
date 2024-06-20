@@ -5,14 +5,14 @@ public class Mundo {
     private Mapa mapa;
     private int turnosTotales;
     private Estadisticas estadisticas;
-    private Jugador jugador;
+    private Coordenada coordenada;
     private static final int SOLDADOS_INICIALES = 16;
 
     public Mundo(int turnosTotales) {
         mapa = new Mapa(8, 8);
         this.turnosTotales = turnosTotales;
         estadisticas = new Estadisticas();
-        this.jugador = new Jugador();
+        this.coordenada = new Coordenada();
         inicializarSoldados();
     }
 

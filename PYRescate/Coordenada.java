@@ -1,8 +1,8 @@
-public class Jugador {
+public class Coordenada {
     private int coordenadaX;
     private int coordenadaY;
 
-    public Jugador() {
+    public Coordenada() {
         this.coordenadaX = 0;
         this.coordenadaY = 0;
     }
