@@ -1,4 +1,3 @@
-
 class Pregunta {
 
     protected String enunciado;

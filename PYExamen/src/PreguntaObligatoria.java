@@ -1,4 +1,3 @@
-
 class PreguntaObligatoria extends Pregunta {
     public PreguntaObligatoria(String enunciado) {
         super(enunciado);

@@ -33,4 +33,3 @@ class Examen {
         return resultado;
     }
 }
-

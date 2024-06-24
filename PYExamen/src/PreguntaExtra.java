@@ -8,4 +8,3 @@ class PreguntaExtra extends Pregunta {
         return "[EXTRA] " + super.mostrar();
     }
 }
-

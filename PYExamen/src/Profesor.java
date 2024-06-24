@@ -1,11 +1,11 @@
-class Profesor extends Persona{
+class Profesor extends Persona {
     private Asignatura asignatura;
 
     public Profesor(String nombre) {
-        super(nombre,"");
+        super(nombre, "");
     }
 
-    public Profesor(String nombre, String dni){
+    public Profesor(String nombre, String dni) {
         super(nombre, dni);
     }
 
@@ -15,7 +15,9 @@ class Profesor extends Persona{
 
     public void mostrar() {
         System.out.println(getNombre() + " imparte " + asignatura.mostrar());
+        if (asignatura.getExamen() != null) {
+            System.out.println(asignatura.getExamen().mostrarExamen());
+        }
     }
-    
 
 }

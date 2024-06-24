@@ -8,4 +8,3 @@ class PreguntaOpcional extends Pregunta {
         return "[OPCIONAL] " + super.mostrar();
     }
 }
-
