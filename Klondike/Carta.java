@@ -5,7 +5,7 @@ public class Carta {
     private int numero;
     private boolean bocaArriba;
 
-    private final String[] PALOS = { "♠️", "♣️", "♦️", "♥️" };
+    private final String[] PALOS = { "Picas", "Trebol", "Diamante", "Corazon" };
     private final String[] NUMEROS = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "X", "J", "Q", "K" };
 
     private final Intervalo NEGROS = new Intervalo(0, 1);
@@ -24,7 +24,7 @@ public class Carta {
             numero = NUMEROS[this.numero];
             palo = PALOS[this.palo];
         }
-        System.out.print ("[" + numero + " " + palo + "]");
+        System.out.print("[" + numero + " " + palo + "]");
     }
 
     public void voltear() {
@@ -32,7 +32,7 @@ public class Carta {
     }
 
     public boolean esAs() {
-        return numero==0;
+        return numero == 0;
     }
 
     public boolean igualPalo(Carta carta) {
@@ -40,11 +40,11 @@ public class Carta {
     }
 
     public boolean siguiente(Carta carta) {
-        return this.numero == carta.numero+1;
+        return this.numero == carta.numero + 1;
     }
 
     public boolean esRey() {
-        return numero==12;
+        return numero == 12;
     }
 
     public boolean bocaArriba() {
@@ -52,7 +52,7 @@ public class Carta {
     }
 
     public boolean distintoColor(Carta carta) {
-        return this.rojo() && carta.negro() || this.negro() && carta.rojo();        
+        return this.rojo() && carta.negro() || this.negro() && carta.rojo();
     }
 
     private boolean negro() {
