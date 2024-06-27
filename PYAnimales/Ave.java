@@ -1,9 +1,31 @@
+public class Ave extends Vertebrado{
 
-public class Ave {
+    protected String pico;
 
+    public Ave() {
+        super();
+        this.pico = "Pico";
+    }
+
+    public void volar() {
+        System.out.println("El ave vuela");
+    }
+
+    public void ponerHuevos() {
+        System.out.println("El ave pone huevos");
+    }
+
+    @Override
     public void mostrar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mostrar'");
+        super.mostrar();
+        mostrarEspecifico();
+    }
+
+    public void mostrarEspecifico() {
+        System.out.println("El ave tiene: ");
+        System.out.println("* " + pico);
+        Ornitorrinco ornitorrinco = new Ornitorrinco();
+        ornitorrinco.mostrarEspecifico();
     }
 
 }

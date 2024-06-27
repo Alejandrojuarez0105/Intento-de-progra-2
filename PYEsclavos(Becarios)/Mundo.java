@@ -1,4 +1,4 @@
-class Mundo{
+class Mundo {
     public static void main(String[] args) {
         EsclavoAgil esclavoAgil = new EsclavoAgil();
         EsclavoFenix esclavoFenix = new EsclavoFenix();
@@ -10,6 +10,6 @@ class Mundo{
         System.out.println("-".repeat(30));
         esclavoOrdenacion.mostrar();
         System.out.println("-".repeat(30));
-        
+
     }
 }

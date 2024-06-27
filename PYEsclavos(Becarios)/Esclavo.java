@@ -10,13 +10,11 @@ public class Esclavo {
         this.equipo = equipo;
         this.horasTrabajadas = horasTrabajadas;
     }
-    
+
     public void mostrar() {
-        System.out.println("Nombre: " + nombre + ", Edad: " + edad + ", Equipo: " + equipo + ", Las horas se distribuyen de la siguiente manera: " );
+        System.out.println("Nombre: " + nombre + ", Edad: " + edad + ", Equipo: " + equipo
+                + ", Las horas se distribuyen de la siguiente manera: ");
         horasTrabajadas.mostrar();
     }
-    
-
-    
 
 }

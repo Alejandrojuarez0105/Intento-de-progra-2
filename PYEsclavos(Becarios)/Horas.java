@@ -5,7 +5,7 @@ class Horas {
     private int horasJueves;
     private int horasViernes;
 
-    public Horas(int horasLunes, int horasMartes, int horasMiercoles, int horasJueves, int horasViernes){
+    public Horas(int horasLunes, int horasMartes, int horasMiercoles, int horasJueves, int horasViernes) {
         this.horasLunes = horasLunes;
         this.horasMartes = horasMartes;
         this.horasMiercoles = horasMiercoles;

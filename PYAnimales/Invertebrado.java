@@ -1,7 +1,8 @@
 class Invertebrado extends Animal {
 
+    @Override
     public void mostrar() {
-        System.out.println("Invertebrado:");
-        System.out.println("  Células: ");
+        System.out.println("Un animal invertebrado tiene: ");
+        super.mostrar();
     }
 }
