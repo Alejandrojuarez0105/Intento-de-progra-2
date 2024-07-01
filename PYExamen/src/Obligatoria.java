@@ -1,5 +1,5 @@
-class PreguntaObligatoria extends Pregunta {
-    public PreguntaObligatoria(String enunciado) {
+class Obligatoria extends Pregunta {
+    public Obligatoria(String enunciado) {
         super(enunciado);
     }
 

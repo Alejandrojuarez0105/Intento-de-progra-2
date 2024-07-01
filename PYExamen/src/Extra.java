@@ -1,5 +1,5 @@
-class PreguntaExtra extends Pregunta {
-    public PreguntaExtra(String enunciado) {
+class Extra extends Pregunta {
+    public Extra(String enunciado) {
         super(enunciado);
     }
 

@@ -6,11 +6,11 @@ public class Mundo {
 
         Examen examen = new Examen("Examen parcial");
 
-        examen.asociarPregunta(new PreguntaObligatoria("¿Qué es la herencia en programación orientada a objetos?"));
-        examen.asociarPregunta(new PreguntaOpcional("Enumera tres beneficios del polimorfismo."));
-        examen.asociarPregunta(new PreguntaExtra("Diferencia entre overloading y overriding en Java."));
-        examen.asociarPregunta(new PreguntaObligatoria("Explica el concepto de encapsulamiento."));
-        examen.asociarPregunta(new PreguntaOpcional("Menciona dos ejemplos de uso de interfaces en Java."));
+        examen.asociarPregunta(new Obligatoria("¿Qué es la herencia en programación orientada a objetos?"));
+        examen.asociarPregunta(new Opcional("Enumera tres beneficios del polimorfismo."));
+        examen.asociarPregunta(new Extra("Diferencia entre overloading y overriding en Java."));
+        examen.asociarPregunta(new Obligatoria("Explica el concepto de encapsulamiento."));
+        examen.asociarPregunta(new Opcional("Menciona dos ejemplos de uso de interfaces en Java."));
 
         Profesor vigilante = new Profesor("Loyda", "XXX666999");
 
