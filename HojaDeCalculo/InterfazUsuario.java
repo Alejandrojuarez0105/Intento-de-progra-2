@@ -1,7 +1,7 @@
 public class InterfazUsuario {
 
-    public InterfazUsuario(HojaDeCalculo miHoja) {
-        // TODO Auto-generated constructor stub
+    public InterfazUsuario(HojaDeCalculo hoja) {
+        //TODO Auto-generated constructor stub
     }
 
     public void iniciar() {

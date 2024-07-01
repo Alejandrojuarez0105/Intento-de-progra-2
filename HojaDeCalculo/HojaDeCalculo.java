@@ -1,17 +1,16 @@
-public class HojaDeCalculo {
+class HojaDeCalculo {
 
     private Celda[][] celdas;
-    private final int FILAS;
-    private final int COLUMNAS;
+    final int NUMERO_COLUMNAS = 10;
+    final int NUMERO_FILAS = 15;
 
-    public HojaDeCalculo(int numeroFilas, int numeroColumnas) {
-        this.FILAS = numeroFilas;
-        this.COLUMNAS = numeroColumnas;
-        celdas = new Celda[FILAS][COLUMNAS];
-        for (int i = 0; i < FILAS; i++) {
-            for (int j = 0; j < COLUMNAS; j++) {
-                celdas[i][j] = new Celda();
+    public HojaDeCalculo(){
+        celdas = new Celda[NUMERO_FILAS][NUMERO_COLUMNAS];
+        for(int i = 0; i < NUMERO_FILAS; i++){
+            for (int j = 0; j < NUMERO_COLUMNAS; j++){
+                    celdas[i][j] = new Celda();
             }
         }
     }
+
 }
