@@ -1,8 +1,8 @@
-class Integral extends Pan{
+class Integral extends Pan {
 
     final String DIBUJO = "||||||||||||||";
 
-    public Integral(){
+    public Integral() {
         super("Integral");
     }
 
@@ -10,5 +10,5 @@ class Integral extends Pan{
     public void mostrar() {
         System.out.println(DIBUJO);
     }
-    
+
 }

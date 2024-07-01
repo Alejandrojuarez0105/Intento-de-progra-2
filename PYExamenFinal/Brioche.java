@@ -1,8 +1,8 @@
-class Brioche extends Pan{
+class Brioche extends Pan {
 
-    final String DIBUJO = "##############";
+    final String DIBUJO = "############";
 
-    public Brioche(){
+    public Brioche() {
         super("Brioche");
     }
 

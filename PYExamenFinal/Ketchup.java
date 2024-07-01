@@ -1,8 +1,14 @@
+class Ketchup extends Salsas {
 
-public class Ketchup {
+    final String DIBUJO = "ooOooOooOooO";
 
-    public Ketchup(String string) {
-        //TODO Auto-generated constructor stub
+    public Ketchup(String cantidad) {
+        super("Ketchup", cantidad);
+    }
+
+    @Override
+    public void mostrar() {
+        System.out.println(DIBUJO);
     }
 
 }

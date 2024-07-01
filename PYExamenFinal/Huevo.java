@@ -1,4 +1,4 @@
-class Huevo extends Extras{
+class Huevo extends Extras {
 
     final String DIBUJO = "~-~-(  )~-~-";
 

@@ -1,14 +1,12 @@
+class Camarero extends Empleado {
 
-public class Camarero {
+    public void recibir(Hamburguesa hamburguesa) {
+        this.hamburguesa = hamburguesa;
+        tieneHamburguesa = true;
+    }
 
     public void servir() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'servir'");
+        System.out.println("Sale una " + hamburguesa.describir());
+        hamburguesa.mostrar();
     }
-
-    public void recibir(Hamburguesa entregar) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'recibir'");
-    }
-
 }

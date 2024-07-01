@@ -1,32 +1,38 @@
-public class Hamburguesa {
+class Hamburguesa {
 
-    public Hamburguesa(Brioche brioche, Brioche brioche2, Carne laCarne, int nUMERO_EXTRAS) {
-        //TODO Auto-generated constructor stub
+    private Pan[] panes;
+    private Carne carne;
+    private Extras[] extras;
+    private int extrasAgregados;
+
+    public Hamburguesa(Pan panSuperior, Pan panInferior, Carne carne, int numeroExtras) {
+        this.panes = new Pan[] { panSuperior, panInferior };
+        this.carne = carne;
+        this.extras = new Extras[numeroExtras];
+        this.extrasAgregados = 0;
     }
 
-    public void agregarExtra(Cheddar cheddar) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'agregarExtra'");
+    public void agregarExtra(Extras extra) {
+        extras[extrasAgregados] = extra;
+        extrasAgregados++;
     }
 
-    public void agregarExtra(Ketchup ketchup) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'agregarExtra'");
+    public void mostrar() {
+        panes[0].mostrar();
+        carne.mostrar();
+        for (int i = 0; i < extrasAgregados; i++) {
+            extras[i].mostrar();
+        }
+        panes[1].mostrar();
     }
 
-    public void agregarExtra(Mayonesa mayonesa) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'agregarExtra'");
+    public String describir() {
+        String descripcion;
+        descripcion = panes[0].describir() + ", " + carne.describir();
+        for (int i = 0; i < extrasAgregados; i++) {
+            descripcion = descripcion + ", " + extras[i].describir();
+        }
+        descripcion = descripcion + "\n";
+        return descripcion;
     }
-
-    public void agregarExtra(Mayonesa mayonesa) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'agregarExtra'");
-    }
-
-    public void agregarExtra(Huevo huevo) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'agregarExtra'");
-    }
-    
 }

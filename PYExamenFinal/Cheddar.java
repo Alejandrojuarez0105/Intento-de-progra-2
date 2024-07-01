@@ -1,4 +1,4 @@
-class Cheddar extends Extras{
+class Cheddar extends Extras {
 
     final String DIBUJO = "============";
 

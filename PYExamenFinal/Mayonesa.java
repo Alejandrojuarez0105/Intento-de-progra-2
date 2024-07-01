@@ -1,8 +1,14 @@
+class Mayonesa extends Salsas {
 
-public class Mayonesa {
+    final String DIBUJO = "~=~~=~~=~~=~";
 
-    public Mayonesa(String string) {
-        //TODO Auto-generated constructor stub
+    public Mayonesa(String cantidad) {
+        super("Mayonesa", cantidad);
+    }
+
+    @Override
+    public void mostrar() {
+        System.out.println(DIBUJO);
     }
 
 }

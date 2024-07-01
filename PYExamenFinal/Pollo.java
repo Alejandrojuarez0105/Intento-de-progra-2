@@ -1,4 +1,4 @@
-class Pollo extends Carne{
+class Pollo extends Carne {
 
     final String DIBUJO = ";;;;;;;;;;;;";
 
@@ -10,5 +10,5 @@ class Pollo extends Carne{
     public void mostrar() {
         System.out.println(DIBUJO);
     }
-    
+
 }

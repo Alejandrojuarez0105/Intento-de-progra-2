@@ -1,9 +1,9 @@
 
-class Res extends Carne{
+class Res extends Carne {
 
     final String DIBUJO = "::::::::::::";
 
-    public Res(String coccion){
+    public Res(String coccion) {
         super("Res", coccion);
     }
 
