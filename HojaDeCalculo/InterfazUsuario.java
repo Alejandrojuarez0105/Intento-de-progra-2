@@ -16,8 +16,10 @@ public class InterfazUsuario {
 
         while (!salir) {
             hoja.mostrarHoja(navegador.getFilaActual(), navegador.getColumnaActual());
-            System.out.println(
-                    "Indique la acción que quiere realizar, w = arriba, s = abajo, a = izquierda, d = derecha, e = editar,q = salir");
+            System.out.println("Utilice las teclas W, A, S y D para moverse.");
+            System.out.println("Presione 'E' para ingresar texto en la celda actual.");
+            System.out.println("Presione 'Q' para salir.");
+            System.out.print("Ingrese un comando: ");
             comando = scanner.nextLine();
             switch (comando) {
                 case "w":

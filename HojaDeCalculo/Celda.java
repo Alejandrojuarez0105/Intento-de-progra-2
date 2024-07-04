@@ -9,11 +9,19 @@ public class Celda {
         this.valor = valor;
     }
 
+    public String getValor(){
+        return valor;
+    }
+
     public String getValorFormateado() {
-        if (valor.length() > 0) {
-            return valor.substring(0, Math.min(valor.length(), 6));
+        if (valor.length() > 4) {
+            return valor.substring(0, 4);
         } else {
-            return "      ";
+            StringBuilder valorFormateado = new StringBuilder(valor);
+            while (valorFormateado.length() < 4) {
+                valorFormateado.append(' ');
+            }
+            return valorFormateado.toString();
         }
     }
 
