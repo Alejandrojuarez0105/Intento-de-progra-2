@@ -2,7 +2,7 @@ class Turno {
 
     private boolean turnoGuerrero;
 
-    public Turno(){
+    public Turno() {
         this.turnoGuerrero = true;
     }
 

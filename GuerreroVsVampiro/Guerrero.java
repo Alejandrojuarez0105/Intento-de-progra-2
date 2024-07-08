@@ -1,8 +1,12 @@
 class Guerrero {
 
-    private int vida = 20;
-    private int ataque = 2;
-    private final double PROBABILIDAD_EXITO = 0.50;
+    private int vida = 150;
+    private Arma[] armas;
+    private int armaSeleccionada = 0;
+
+    public Guerrero() {
+        armas = new Arma[] { new Hacha(), new Espada(), new Latigo() };
+    }
 
     public int vida() {
         return vida;
@@ -11,13 +15,27 @@ class Guerrero {
     public void recibirDaño(int daño) {
         this.vida -= daño;
     }
+
     public boolean atacar() {
-        return Math.random() < PROBABILIDAD_EXITO;
+        return armas[armaSeleccionada].atacar();
     }
 
     public int ataque() {
-        return ataque;
+        return armas[armaSeleccionada].getDaño();
     }
 
+    public void seleccionarArma(int indice) {
+        if (indice >= 0 && indice < armas.length) {
+            armaSeleccionada = indice;
+        }
+    }
+
+    public int dañoCausado() {
+        if (atacar()) {
+            return ataque();
+        } else {
+            return 0;
+        }
+    }
 
 }
