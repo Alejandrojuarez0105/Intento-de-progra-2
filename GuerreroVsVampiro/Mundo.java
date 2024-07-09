@@ -24,21 +24,17 @@ class Mundo {
                 int seleccion = scanner.nextInt();
                 scanner.nextLine();
                 guerrero.seleccionarArma(seleccion);
-                int dañoCausado = guerrero.dañoCausado();
-                vampiro.recibirDaño(dañoCausado);
                 if (guerrero.atacar()) {
-                    int dañoCausado = guerrero.ataque();
-                    vampiro.recibirDaño(dañoCausado);
-                    System.out.println("El guerrero ataca y causa " + dañoCausado()
+                    vampiro.recibirDaño(guerrero.ataque());
+                    System.out.println("El guerrero ataca y causa " + guerrero.ataque()
                             + " de daño. Ahora el vampiro tiene " + vampiro.vida() + " HP");
                 } else {
                     System.out.println("El guerrero falló su ataque");
                 }
             } else {
                 if (vampiro.atacar()) {
-                    int dañoCausado = vampiro.ataque();
-                    guerrero.recibirDaño(dañoCausado);
-                    System.out.println("El vampiro ataca y causa " + dañoCausado
+                    guerrero.recibirDaño(vampiro.ataque());
+                    System.out.println("El vampiro ataca y causa " + vampiro.ataque()
                             + " de daño. Ahora el guerrero tiene " + guerrero.vida() + " HP");
                 } else {
                     System.out.println("El vampiro falló su ataque");
@@ -52,7 +48,6 @@ class Mundo {
             System.out.println("El vampiro ganó la batalla");
         }
     }
-
 
     public static void main(String[] args) {
         Mundo mundo = new Mundo();

@@ -2,8 +2,8 @@ class Vampiro {
     private int vida = 60;
     private Ataque[] ataques;
 
-    public Vampiro(){
-        ataques = new Ataque[]{new Mordida(), new Garra(), new AtaqueVolador()};
+    public Vampiro() {
+        ataques = new Ataque[] { new Mordida(), new Garra(), new AtaqueVolador() };
     }
 
     public int vida() {
@@ -20,14 +20,6 @@ class Vampiro {
 
     public int ataque() {
         return ataques[(int) (Math.random() * ataques.length)].getDaño();
-    }
-
-    public int dañoCausado() {
-        if (atacar()) {
-            return ataque();
-        } else {
-            return 0;
-        }
     }
 
 }

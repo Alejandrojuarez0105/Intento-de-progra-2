@@ -30,12 +30,4 @@ class Guerrero {
         }
     }
 
-    public int dañoCausado() {
-        if (atacar()) {
-            return ataque();
-        } else {
-            return 0;
-        }
-    }
-
 }
