@@ -42,7 +42,6 @@ class JuegoCotillas {
 
         rumor = new Rumor(participantes[origenRumor], participantes[victimaRumor]);
         System.out.println(rumor.getInicioMensaje());
-        scanner.next();
     }
 
     private void pasarRumor() {
@@ -50,11 +49,11 @@ class JuegoCotillas {
         int[] vecesEscuchado = new int[cantidadParticipantes];
         vecesEscuchado[actual]++;
 
-        do {
+        while (true) {
             int destinoRumor;
             do {
                 destinoRumor = (int) (Math.random() * cantidadParticipantes);
-            } while (destinoRumor == actual || destinoRumor == victimaRumor);
+            } while (destinoRumor == actual || destinoRumor == origenRumor);
 
             System.out.println(rumor.getMensaje(participantes[actual], participantes[destinoRumor]));
 
@@ -66,7 +65,11 @@ class JuegoCotillas {
 
             vecesEscuchado[destinoRumor]++;
             actual = destinoRumor;
-            scanner.next();
-        } while (actual != origenRumor);
+
+            if (actual == origenRumor) {
+                System.out.println("El rumor ha vuelto a su origen. Fin del juego.");
+                break;
+            }
+        }
     }
 }
