@@ -1,6 +1,6 @@
-class ChineseWhispers {
+class Cotillas {
     public static void main(String[] args) {
-        Juego juego = new Juego();
+        JuegoCotillas juego = new JuegoCotillas();
         juego.jugar();
     }
 }
